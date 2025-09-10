@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PEPPER SOUP BOWLS AND MORE</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Start hidden at top */
+    .hidden-top {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    /* Drop animation */
+    .drop {
+      transition: transform 3s ease, opacity 3s ease;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+  </style>
+  
+<!-- Primary	Chili Red	#C8102E	Buttons, links, highlights, active states
+Secondary	Soup Brown	#5C3B1E	Headers, footers, backgrounds, overlays
+Accent	Warm Yellow	#F4C542	Icons, badges, hover effects, price tags
+Neutral Light	Cream White	#FFFFFF	Body text, backgrounds, spacing
+Neutral Dark	Deep Black	#000000	Text, borders, navigation, contrast -->
+</head>
+
+<body>
+     
+<header class="w-full fixed top-0 z-50 bg-[#5C3B1E] hidden-top" id="main-header">
+
+  <div class="flex justify-between items-center h-[80px] px-6">
+    <!-- Logo -->
+    <div class="flex justify-between items-center h-[80px] px-6">
+  <!-- Logo -->
+  <div>
+    <img class="w-[120px] h-[120px] cursor-pointer" 
+         src="./assets/images/Warm_Emblem_Logo_with_Pepper_Motif-removebg-preview.png" 
+         alt="Logo"
+         >
+  </div>
+</div>
+
+
+    <!-- Menu (desktop & mobile) -->
+    <ul id="menu" class="hidden md:flex gap-5 md:flex-row absolute md:static top-[60px] left-0 w-full md:w-auto bg-[#5C3B1E] md:bg-transparent flex-col md:flex-row text-center p-4 md:p-0">
+      <li><a href="#home" class="text-[#F5F5F5] font-bold text-xl hover:text-[#F4C542]">Home</a></li>
+      <li><a href="#about-us" class="text-[#F5F5F5] font-bold text-xl hover:text-[#F4C542]">About Us</a></li>
+      <li><a href="#menu-food" class="text-[#F5F5F5] font-bold text-xl hover:text-[#F4C542]">Menu</a></li>
+      <li><a href="#testimonials" class="text-[#F5F5F5] font-bold text-xl hover:text-[#F4C542]">Testimonials</a></li>
+      <li><a href="#faq" class="text-[#F5F5F5] font-bold text-xl hover:text-[#F4C542]">FAQ</a></li>
+      <li><a href="#contact" class="text-[#F5F5F5] font-bold text-xl hover:text-[#F4C542]">Contact</a></li>
+      <li><a id="cart-menu-btn" class="cursor-pointer text-[#F5F5F5] font-bold text-xl hover:text-[#F4C542]">Cart</a></li>
+    </ul>
+
+    <!-- Hamburger (mobile) -->
+    <img id="menu-bar" src="./assets/images/more (1).png" 
+         alt="menu" 
+         class="w-[40px] h-[40px] md:hidden cursor-pointer">
+  </div>
+
+</header>
+
+
+<div id="cart" class="hidden fixed top-[100px] right-5 bg-white shadow-md rounded-lg p-4 w-full max-w-md z-50">
+  <div class="flex justify-between items-center mb-2">
+    <h2 class="font-bold text-lg">Your Cart</h2>
+    <button id="close-cart" class="text-red-600 font-bold text-lg">✖</button>
+  </div>
+  
+  <ul id="cart-items" class="mb-2"></ul>
+  <p id="cart-total" class="font-semibold">Total: $0</p>
+
+  <a id="checkout-btn" href="#" target="_blank"
+     class="mt-4 inline-block w-full text-center bg-green-600 text-white px-4 py-2 rounded-lg font-semibold">
+     Checkout with WhatsApp
+  </a>
+
+  <!-- Clear all cart items -->
+  <button id="clear-cart" class="mt-2 w-full bg-red-500 text-white px-4 py-2 rounded-lg font-semibold">
+    Clear Cart List
+  </button>
+</div>
+
+<main id="top">
+  <div class="relative inset-0">
+    <!-- Background Image -->
+    <div class="relative h-screen w-full overflow-hidden">
+  <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover">
+    <source src="./assets/videos/f0e5e4aa0721efd66936647c7b22b230.mp4" type="video/mp4">
+  </video>
+
+    <!-- Overlay Content -->
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 space-y-6" id="home">
+      <h1 class="text-white font-extrabold text-2xl sm:text-4xl md:text-5xl leading-snug">
+        PEPPER SOUP BOWLS AND MORE<br>
+        <span id="typing-text"></span>
+      </h1>
+
+      <a href="#menu-food" 
+         class="bg-[#C8102E] px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition">
+        Order Now
+      </a>
+    </div>
+  </div>
+</main>
+
+<section class="mt-32 px-6" id="about-us">
+  <h1 class="text-center text-3xl md:text-4xl text-[#5C3B1E] font-bold mb-16">About Us</h1>
+
+  <!-- First Block -->
+  <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-16">
+    <!-- Image -->
+    <div class="w-full md:w-1/2 flex justify-center">
+      <img src="./assets/images/download.jpg" 
+           class="w-full max-w-md h-auto object-cover rounded-lg shadow-lg" 
+           alt="West African dish">
+    </div>
+    <!-- Text -->
+    <div class="w-full md:w-1/2 text-center text-[#C8102E] font-bold md:text-left">
+      <p>
+        We specialize in authentic, locally-inspired dishes that celebrate the richness of West African cuisine. <br>
+        From pepper soup that warms the soul to jollof rice that sparks nostalgia, <br>
+        every meal is prepared with care, tradition, and a touch of modern flair. <br><br>
+        Whether you're craving the comfort of egusi, the boldness of suya, or the simplicity of moi moi, we’ve got you covered.
+      </p>
+    </div>
+  </div>
+
+  <!-- Second Block -->
+  <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+    <!-- Image -->
+    <div class="w-full md:w-1/2 flex justify-center">
+      <img src="./assets/images/Egusi Soup & Fufu.jpg" 
+           class="w-full max-w-md h-auto object-cover rounded-lg shadow-lg" 
+           alt="Egusi soup and fufu">
+    </div>
+    <!-- Text -->
+    <div class="w-full md:w-1/2 text-center md:text-left text-[#C8102E] font-bold">
+      <p>
+        Our kitchen is more than a place to cook — it’s a bridge between cultures, a celebration of heritage, <br>
+        and a reminder that no matter where you are, home is just one bite away. <br><br>
+        From hearty soups to grilled delights and timeless classics, we bring you flavors that feel like home.
+      </p>
+    </div>
+  </div>
+    <div class="w-full flex flex-col md:flex-row mt-32 gap-8 px-4">
+  <!-- Text Section -->
+  <div class="w-full md:w-1/2 flex flex-col items-center md:items-start gap-5">
+    <p class="text-2xl text-center md:text-left font-extrabold text-gray-500">
+      Our food is more than just a meal — it’s a story of culture, comfort, and flavor.
+    </p>
+    <p class="text-[#C8102E] font-bold mt-2 mb-4 text-center md:text-left">
+      Dining with us is more than a meal — it’s an experience that awakens your senses. <br>
+      The aroma, the flavor, and the warmth of each dish are crafted to comfort your soul 
+      and bring joy with every mouthful.
+    </p>
+    <p class="text-[#C8102E] font-bold mt-2 mb-4 text-center hidden order-text md:text-left">
+      Stop just looking — order and enjoy!<br>
+    You’ve scrolled, you’ve seen the pictures, now it’s time to taste the real deal.<br>
+    One bite is all it takes to understand why our customers keep coming back for more.<br>
+    The flavors hit different, the portions satisfy, and the quality is top-notch every single time.<br>
+    This isn’t just food — it’s comfort, happiness, and satisfaction on another level.<br>
+    Why wait?  Scroll down to the menu and place your order today — your taste buds will thank you!<br>
+    </p>
+    <a class="bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition show-text">
+      Read More
+    </a>
+  </div>
+
+  <!-- Image Section -->
+  <div class="w-full md:w-1/2 flex flex-col sm:flex-row justify-center items-center gap-4">
+    <img src="./assets/images/Amala, Ewedu, Gbegiri, Obe ata ati eran _ aka Abula.jpg" 
+         class="w-full sm:w-[300px] h-[200px] object-cover rounded-lg shadow-md">
+    <img src="./assets/images/GOOD MORNING!.jpg" 
+         alt="" 
+         class="w-full sm:w-[350px] h-[250px] object-cover rounded-lg shadow-md">
+  </div>
+</div>
+
+</section>
+
+<div class="mt-32 px-6" id="menu-food">
+  <h1 class="text-center text-3xl md:text-4xl text-[#5C3B1E] font-bold pt-8 pb-32">EXPLORE Our Menu</h1>
+  <div class="flex w-full gap-4 mx-2 justify-between md:hidden mb-a">
+  <p class="text-[#C8102E] text-2xl text-center">Scroll to view more meals</p>
+<img src="./assets/images/right-arrow (1).png" alt="" class="w-[70px] h-[70px]">
+</div>
+</div>
+
+
+<div id="cart" 
+     class="bg-white shadow-md rounded-lg p-4 mt-6 w-full max-w-md hidden 
+            mx-auto sm:mx-0 sm:w-full">
+  <h2 class="font-bold text-lg mb-2 text-center sm:text-left">Your Cart</h2>
+  <ul id="cart-items" class="mb-2"></ul>
+  <p id="cart-total" class="font-semibold text-center sm:text-left">Total: $0</p>
+  <a id="checkout-btn" href="" target="_blank"
+     class="mt-4 inline-block w-full text-center bg-green-600 text-white px-4 py-2 rounded-lg font-semibold">
+     Checkout with WhatsApp
+  </a>
+</div>
+
+
+
+
+
+<main class="w-full flex items-center justify-center h-auto px-2">
+  <!-- Horizontal scroll container -->
+  <div class="flex overflow-x-auto space-x-4 snap-x snap-mandatory">
+    
+    <!-- Project 1 -->
+    <div class="flex overflow-x-auto space-x-4 snap-x snap-mandatory" id="menu">
+    <!-- Example item -->
+    <div class="snap-start min-w-full sm:min-w-[50%] lg:min-w-[33%] bg-[#5C3B1E] shadow-md rounded-xl p-4 h-[400px] flex flex-col items-center">
+      <img src="./assets/images/Nigerian breakfast.jpg" 
+           class="w-full h-48 object-cover rounded-md hover:scale-105 transition">
+      <p class="text-white text-sm my-4 text-center">
+        PAP AND AKARA <br>
+        10-15 minutes <br>
+        <span class="price">$50</span>
+      </p>
+      <button class="order-btn bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition"
+              data-name="PAP AND AKARA" data-price="50">
+        Add to Cart
+      </button>
+    </div>
+
+
+    <!-- Project 2 -->
+    <div class="snap-start min-w-full sm:min-w-[50%] lg:min-w-[33%] bg-[#5C3B1E] shadow-md rounded-xl p-4 h-[400px] flex flex-col items-center">
+      <img src="./assets/images/Lunch _ Nigerian Yam & Beef Peppersoup Recipe 🥣.jpg" 
+           class="w-full h-48 object-cover rounded-md hover:scale-105 transition">
+      <p class="text-white text-sm my-4 text-center">
+        Chicken Pepper Soup <br>
+        15-35 minutes <br>
+       <span> $50</span>.
+      </p>
+      <button class="order-btn bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition"
+              data-name="Chicken Pepper Soup" data-price="50">
+        Add to Cart
+      </button>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="snap-start min-w-full sm:min-w-[50%] lg:min-w-[33%] bg-[#5C3B1E] shadow-md rounded-xl p-4 h-[400px] flex flex-col items-center">
+      <img src="./assets/images/Jollof rice.jpg" 
+           class="w-full h-48 object-cover rounded-md hover:scale-105 transition">
+      <p class="text-white text-sm my-4 text-center">
+        Jollof Rice And Chicken <br>
+        30-45 minutes <br>
+       <span> $50</span>.
+      </p>
+      <button class="order-btn bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition"
+              data-name="Jollof Rice And Chicken" data-price="50">
+        Add to Cart
+      </button>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="snap-start min-w-full sm:min-w-[50%] lg:min-w-[33%] bg-[#5C3B1E] shadow-md rounded-xl p-4 h-[400px] flex flex-col items-center">
+      <img src="./assets/images/How to Prepare a Typical Nigerian Pepper Soup.jpg" 
+           class="w-full h-48 object-cover rounded-md hover:scale-105 transition">
+      <p class="text-white text-sm my-4 text-center">
+        Assorted Meat Pepper Soup <br>
+        30-45 minutes <br>
+       <span> $30</span>.
+      </p>
+      <button class="order-btn bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition"
+              data-name="Assorted Meat Pepper Soup" data-price="30">
+        Add to Cart
+      </button>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="snap-start min-w-full sm:min-w-[50%] lg:min-w-[33%] bg-[#5C3B1E] shadow-md rounded-xl p-4 h-[400px] flex flex-col items-center">
+      <img src="./assets/images/Abula ❤️.jpg" 
+           class="w-full h-48 object-cover rounded-md hover:scale-105 transition">
+      <p class="text-white text-sm my-4 text-center">
+        Abula <br>
+        30-40 minutes <br>
+       <span> $40</span>.
+      </p>
+      <button class="order-btn bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition"
+              data-name="Abula " data-price="40">
+        Add to Cart
+      </button>
+    </div>
+
+
+    <!-- Project 6 -->
+    <div class="snap-start min-w-full sm:min-w-[50%] lg:min-w-[33%] bg-[#5C3B1E] shadow-md rounded-xl p-4 h-[400px] flex flex-col items-center">
+      <img src="./assets/images/download (1).jpg" 
+           class="w-full h-48 object-cover rounded-md hover:scale-105 transition">
+      <p class="text-white text-sm my-4 text-center">
+        Goat Meat Pepper Soup<br>
+        25-30 minutes <br>
+       <span> $80</span>.
+      </p>
+      <button class="order-btn bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition"
+              data-name="Goat Meat Pepper Soup" data-price="80">
+        Add to Cart
+      </button>
+    </div>
+
+
+    <!-- Project 7 -->
+    <div class="snap-start min-w-full sm:min-w-[50%] lg:min-w-[33%] bg-[#5C3B1E] shadow-md rounded-xl p-4 h-[400px] flex flex-col items-center">
+      <img src="./assets/images/download (2).jpg" 
+           class="w-full h-48 object-cover rounded-md hover:scale-105 transition">
+      <p class="text-white text-sm my-4 text-center">
+        Offal Pepper Soup <br>
+        30-40 minutes <br>
+       <span> $45</span>.
+      </p>
+     <button class="order-btn bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition"
+              data-name="Offal Pepper Soup" data-price="45">
+        Add to Cart
+      </button>
+    </div>
+
+
+    <!-- Project 8-->
+    <div class="snap-start min-w-full sm:min-w-[50%] lg:min-w-[33%] bg-[#5C3B1E] shadow-md rounded-xl p-4 h-[400px] flex flex-col items-center">
+      <img src="./assets/images/download (3).jpg" 
+           class="w-full h-48 object-cover rounded-md hover:scale-105 transition">
+      <p class="text-white text-sm my-4 text-center">
+        Fish Pepper Soup <br>
+        30-40 minutes <br>
+       <span> $50</span>.
+      </p>
+      <button class="order-btn bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition"
+              data-name="Fish Pepper Soup" data-price="50">
+        Add to Cart
+      </button>
+    </div>
+
+
+    <!-- Project 9 -->
+    <div class="snap-start min-w-full sm:min-w-[50%] lg:min-w-[33%] bg-[#5C3B1E] shadow-md rounded-xl p-4 h-[400px] flex flex-col items-center">
+      <img src="./assets/images/Authentic Nigerian Edikang Ikong Soup Recipe _ Hearty & Flavorful Nigerian Soup.jpg" 
+           class="w-full h-48 object-cover rounded-md hover:scale-105 transition">
+      <p class="text-white text-sm my-4 text-center">
+        Efo Riro <br>
+        30-40 minutes <br>
+       <span> $50</span>.
+      </p>
+      <button class="order-btn bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition"
+              data-name="Efo Riro" data-price="50">
+        Add to Cart
+      </button>
+    </div>
+
+
+    <!-- Project 10 -->
+    <div class="snap-start min-w-full sm:min-w-[50%] lg:min-w-[33%] bg-[#5C3B1E] shadow-md rounded-xl p-4 h-[400px] flex flex-col items-center">
+      <img src="./assets/images/Ogbono soup.jpeg" 
+           class="w-full h-48 object-cover rounded-md hover:scale-105 transition">
+      <p class="text-white text-sm my-4 text-center">
+        Ogbono Soup <br>
+        20-30 minutes <br>
+       <span> $60</span>.
+      </p>
+     <button class="order-btn bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition"
+              data-name="Ogbono Soup " data-price="60">
+        Add to Cart
+      </button>
+    </div>
+
+
+    <!-- Project 11 -->
+    <div class="snap-start min-w-full sm:min-w-[50%] lg:min-w-[33%] bg-[#5C3B1E] shadow-md rounded-xl p-4 h-[400px] flex flex-col items-center">
+      <img src="./assets/images/Instagram_ @akitchenfaraway.jpg" 
+           class="w-full h-48 object-cover rounded-md hover:scale-105 transition">
+      <p class="text-white text-sm my-4 text-center">
+        Beans And Plantain<br>
+        25-35 minutes <br>
+       <span> $80</span>.
+      </p>
+      <button class="order-btn bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition"
+              data-name="Beans And Plantain" data-price="80">
+        Add to Cart
+      </button>
+    </div>
+
+
+    <!-- Project 12 -->
+    <div class="snap-start min-w-full sm:min-w-[50%] lg:min-w-[33%] bg-[#5C3B1E] shadow-md rounded-xl p-4 h-[400px] flex flex-col items-center">
+      <img src="./assets/images/Beef recipe.jpg" 
+           class="w-full h-48 object-cover rounded-md hover:scale-105 transition">
+      <p class="text-white text-sm my-4 text-center">
+        Fied Spicy Meat <br>
+        30-40 minutes <br>
+       <span> $45</span>.
+      </p>
+      <button class="order-btn bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition"
+              data-name="Fied Spicy Meat" data-price="45">
+        Add to Cart
+      </button>
+    </div>
+
+  </div>
+</main>
+
+
+
+
+<h1  class="text-center text-3xl md:text-4xl text-[#5C3B1E] font-bold mt-32 mb-16" id="testimonials">
+  Testimonials
+</h1>
+
+<section class="w-full sm:w-[90%] md:w-[80%] mx-auto bg-[#5C3B1E] p-4 sm:p-6 rounded shadow-md mt-12">
+  <h2 class="text-2xl font-bold mb-4 text-center text-[#C8102E]">What Our Customers Say</h2>
+
+  <div class="overflow-hidden relative">
+    <!-- Slides container -->
+    <div id="testimonial-list" class="flex transition-transform duration-500 ease-in-out">
+      
+      <!-- Slide 1 -->
+      <div class="min-w-full p-4 sm:p-6 bg-white rounded shadow text-center">
+        <p class="font-bold text-xl sm:text-2xl">
+          Finally, a taste of home! The pepper soup brought back so many memories. I’ll definitely order again
+        </p>
+        <p class="text-sm text-gray-600 mt-2">– Peter Williams</p>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="min-w-full p-4 sm:p-6 bg-white rounded shadow text-center">
+        <p class="font-bold text-xl sm:text-2xl">
+          The suya na correct taste! I no believe say I fit chop am dey abroad like this. Chai,
+        </p>
+        <p class="text-sm text-gray-600 mt-2">– Kirstyn Ademola</p>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="min-w-full p-4 sm:p-6 bg-white rounded shadow text-center">
+        <p class="font-bold text-xl sm:text-2xl">
+          I was craving jollof rice from back home and this didn’t disappoint. Flavors are spot on!
+        </p>
+        <p class="text-sm text-gray-600 mt-2">– Omotola Olayiwola</p>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="min-w-full p-4 sm:p-6 bg-white rounded shadow text-center">
+        <p class="font-bold text-xl sm:text-2xl">
+          I didn’t expect the egusi soup to taste this fresh! It honestly feels like my mom cooked it herself
+        </p>
+        <p class="text-sm text-gray-600 mt-2">– Michael Bdmus</p>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="min-w-full p-4 sm:p-6 bg-white rounded shadow text-center">
+        <p class="font-bold text-xl sm:text-2xl">
+          The local snacks selection is great. I feel connected to Nigeria every time I order. Highly recommend!
+        </p>
+        <p class="text-sm text-gray-600 mt-2">– Amina Desire</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dots -->
+  <div class="flex justify-center mt-4 space-x-2">
+    <button class="dot w-3 h-3 rounded-full bg-[#C8102E]"></button>
+    <button class="dot w-3 h-3 rounded-full bg-[#C8102E]"></button>
+    <button class="dot w-3 h-3 rounded-full bg-[#C8102E]"></button>
+    <button class="dot w-3 h-3 rounded-full bg-[#C8102E]"></button>
+    <button class="dot w-3 h-3 rounded-full bg-[#C8102E]"></button>
+  </div>
+</section>
+
+
+<h1 id="faq" class="text-center text-3xl md:text-4xl text-[#5C3B1E] font-bold mb-16 mt-64">
+  Frequently Asked Questions
+</h1>
+
+<div class="w-full px-4 sm:px-8 md:px-32 flex flex-col md:flex-row justify-between gap-10">
+  <div class="flex-1">
+    <h1 class="text-[#C8102E] text-2xl font-bold text-center mb-4">How do I place an order?</h1>
+    <p class="text-gray-500 text-center text-base sm:text-lg">
+      To place an order,<br>
+      just add the dishes you want to your cart<br>
+      and click the “Checkout via WhatsApp” button.<br>
+      Your order details (items, quantities, and total)<br>
+      will appear in a WhatsApp message automatically.<br>
+      Then, simply add your delivery location and <br>
+      let us know if you’ll pay via bank transfer or cash on delivery.<br>
+      We’ll confirm your order and get it ready for delivery!
+    </p>
+  </div>
+
+  <div class="flex-1 mt-10 md:mt-0">
+    <h1 class="text-[#C8102E] text-2xl font-bold text-center mb-4">Do you accept cash on delivery?</h1>
+    <p class="text-gray-500 text-center text-base sm:text-lg">
+      No, all payments must be made before the food is delivered.<br>
+      Don’t worry about delivery fees — delivery is completely free.<br>
+      Once you place your order via WhatsApp,<br>
+      we’ll share the payment details so you can pay securely <br>
+      before we bring your meal.
+    </p>
+  </div>
+</div>
+
+
+<div>
+<div class="w-full px-4 sm:px-8 md:px-32 flex flex-col md:flex-row justify-between gap-10 mt-8">
+  <div class="flex-1">
+    <h1 class="text-[#C8102E] text-2xl font-bold text-center mb-4">What areas do you deliver to?</h1>
+    <p class="text-gray-500 text-center text-base sm:text-lg">
+      For now, <br>
+      we can deliver to selected areas in Texas,<br>
+      including Houston, Dallas, Austin, San Antonio,<br>
+      and Fort Worth. Delivery is fast and free!
+    </p>
+  </div>
+
+  <div class="flex-1 mt-10 md:mt-0">
+    <h1 class="text-[#C8102E] text-2xl font-bold text-center mb-4">Can I customize my food?</h1>
+    <p class="text-gray-500 text-center text-base sm:text-lg">
+      Yes You Can!<br>
+      After placing your order via WhatsApp,<br>
+      you can tell us exactly how you want your food <br>
+      — from spice level to portion size, <br>
+      or even adding extra ingredients. <br>
+      We’ll make it just the way you like!
+    </p>
+  </div>
+</div>
+<div class="w-full px-4 sm:px-8 md:px-32 flex justify-center mt-8" id="contact">
+  <a href="#contact" class="bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition">
+        Ask Question
+  </a>
+</div>
+
+
+<section class="px-4 md:px-12 py-12">
+  <!-- Section Title -->
+  <h1 class="text-center text-3xl md:text-4xl text-[#5C3B1E] font-bold mb-16">
+    Contact
+  </h1>
+
+  <!-- Flex Container -->
+  <div class="flex flex-col md:flex-row gap-10">
+    
+    <!-- LEFT: Contact Form (60%) -->
+    <div class="w-full md:w-3/5">
+      <form class="bg-transparent">
+        <!-- Name -->
+        <label for="Name" class="text-[#5C3B1E] font-bold">Name</label>
+        <input id="name" type="text" placeholder="Enter your Name" 
+               class="w-full rounded bg-[#5C3B1E] text-white py-2 placeholder-white mb-6 pl-2">
+
+        <!-- Phone Number -->
+        <label for="Phone Number" class="text-[#5C3B1E] font-bold">Phone Number</label>
+        <input id="phone" type="number" placeholder="Enter your Number" 
+               class="w-full rounded bg-[#5C3B1E] text-white py-2 placeholder-white mb-6 pl-2">
+
+        <!-- Email -->
+        <label for="email" class="text-[#5C3B1E] font-bold">Email</label>
+        <input id="email" type="email" placeholder="Enter your Email" 
+               class="w-full rounded bg-[#5C3B1E] text-white py-2 placeholder-white mb-6 pl-2">
+
+        <!-- Message -->
+        <label for="Message" class="text-[#5C3B1E] font-bold">Message</label>
+        <textarea id="message" placeholder="Enter your Message" 
+                  class="w-full rounded bg-[#5C3B1E] text-white py-3 placeholder-white mb-6 pl-2 resize-none h-32"></textarea>
+
+        <!-- Button -->
+        <div class="flex">
+          <button type="button" id="sendBtn"
+                  class="bg-[#C8102E] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#F4C542] transition ml-auto">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- RIGHT: Info (40%) -->
+    <div class="w-full md:w-2/5 px-4">
+      <!-- Intro -->
+      <div class="md:mx-4">
+        <h1 class="text-2xl md:text-3xl text-[#C8102E]my-4 font-bold">
+          Pepper Soup Bowl And More
+        </h1>
+        <p class="text-[#C8102E] font-bold leading-relaxed">
+          We specialize in bringing the taste of home to your table—especially our signature pepper soup, cooked with fresh, authentic spices.
+          Whether you’re craving comfort food or introducing friends to Nigerian cuisine, we’ve got you covered.
+          Order today and experience the rich flavors of home, no matter where you are.
+          <br><br>
+          Phone: 
+          <a href="tel:+2348134260378" class="text-[#F4C542] hover:underline">
+            +234 813 426 0378
+          </a>  
+
+          <br>
+          Email: 
+          <a href="mailto:christopherolawale31@gmail.com" class="text-[#F4C542] hover:underline">
+            christopherolawale31@gmail.com
+          </a>
+        </p>
+      </div>
+
+      <!-- Social Media -->
+      <h1 class="text-center text-2xl md:text-3xl text-white font-bold my-6">
+        Find me on :
+      </h1>
+      <div class="flex flex-wrap gap-6 md:gap-10 my-8 justify-center items-center">
+        <a href="https://www.instagram.com/milimoon12/" target="_blank">
+          <img src="./assets/images/instagram.png" 
+               class="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+        </a>
+        <a href="https://www.facebook.com/share/19fTZcdPKN/?mibextid=wwXIfr" target="_blank">
+          <img src="./assets/images/facebook.png" 
+               class="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+        </a>
+        </a>
+        <a href="http://wa.me/2348134260378" target="_blank">
+          <img src="./assets/images/whatsapp.png" 
+               class="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<footer class="w-full bg-[#5C3B1E] flex items-center justify-center py-8 px-4">
+  <div class="text-center">
+    <!-- Logo -->
+    <img 
+      class="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4" 
+      src="./assets/images/Warm_Emblem_Logo_with_Pepper_Motif-removebg-preview.png" 
+      alt="Logo"
+    >
+
+    <!-- Copyright -->
+    <p class="text-white text-sm md:text-lg">
+      © 2025 PepperSoup And More. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<script src="./script.js"></script>
+</body>
+</html>
