@@ -37,7 +37,7 @@ Neutral Dark	Deep Black	#000000	Text, borders, navigation, contrast -->
     <!-- Logo -->
     <div class="flex justify-between items-center h-[80px] px-6">
   <!-- Logo -->
-  <div>
+  <div class="">
     <img class="w-[120px] h-[120px] cursor-pointer" 
          src="./assets/images/Warm_Emblem_Logo_with_Pepper_Motif-removebg-preview.png" 
          alt="Logo"
@@ -48,7 +48,7 @@ Neutral Dark	Deep Black	#000000	Text, borders, navigation, contrast -->
 
     <!-- Menu (desktop & mobile) -->
     <ul id="menu" class="hidden md:flex gap-5 md:flex-row absolute md:static top-[60px] left-0 w-full md:w-auto bg-[#5C3B1E] md:bg-transparent flex-col md:flex-row text-center p-4 md:p-0">
-      <li><a href="#home" class="text-[#F5F5F5] font-bold text-xl hover:text-[#F4C542]">Home</a></li>
+      <li><a href="#home" class="text-[#F5F5F5] font-bold text-xl hover:text-black[#F4C542]">Home</a></li>
       <li><a href="#about-us" class="text-[#F5F5F5] font-bold text-xl hover:text-[#F4C542]">About Us</a></li>
       <li><a href="#menu-food" class="text-[#F5F5F5] font-bold text-xl hover:text-[#F4C542]">Menu</a></li>
       <li><a href="#testimonials" class="text-[#F5F5F5] font-bold text-xl hover:text-[#F4C542]">Testimonials</a></li>
@@ -65,8 +65,8 @@ Neutral Dark	Deep Black	#000000	Text, borders, navigation, contrast -->
 
 </header>
 
-
-<div id="cart" class="hidden fixed top-[100px] right-5 bg-white shadow-md rounded-lg p-4 w-full max-w-md z-50">
+<div class="">
+<div id="cart" class="hidden fixed top-[100px] md:right-6 bg-white shadow-md rounded-lg p-4 w-full max-w-md z-50">
   <div class="flex justify-between items-center mb-2">
     <h2 class="font-bold text-lg">Your Cart</h2>
     <button id="close-cart" class="text-red-600 font-bold text-lg">✖</button>
@@ -84,6 +84,7 @@ Neutral Dark	Deep Black	#000000	Text, borders, navigation, contrast -->
   <button id="clear-cart" class="mt-2 w-full bg-red-500 text-white px-4 py-2 rounded-lg font-semibold">
     Clear Cart List
   </button>
+</div>
 </div>
 
 <main id="top">
@@ -192,18 +193,6 @@ Neutral Dark	Deep Black	#000000	Text, borders, navigation, contrast -->
 </div>
 </div>
 
-
-<div id="cart" 
-     class="bg-white shadow-md rounded-lg p-4 mt-6 w-full max-w-md hidden 
-            mx-auto sm:mx-0 sm:w-full">
-  <h2 class="font-bold text-lg mb-2 text-center sm:text-left">Your Cart</h2>
-  <ul id="cart-items" class="mb-2"></ul>
-  <p id="cart-total" class="font-semibold text-center sm:text-left">Total: $0</p>
-  <a id="checkout-btn" href="" target="_blank"
-     class="mt-4 inline-block w-full text-center bg-green-600 text-white px-4 py-2 rounded-lg font-semibold">
-     Checkout with WhatsApp
-  </a>
-</div>
 
 
 
@@ -413,7 +402,7 @@ Neutral Dark	Deep Black	#000000	Text, borders, navigation, contrast -->
   Testimonials
 </h1>
 
-<section class="w-full sm:w-[90%] md:w-[80%] mx-auto bg-[#5C3B1E] p-4 sm:p-6 rounded shadow-md mt-12">
+<section class="w-full sm:w-[90%] md:w-[80%] mx-auto bg-[#5C3B1E] p-4 sm:p-6 rounded shadow-md mt-12 ">
   <h2 class="text-2xl font-bold mb-4 text-center text-[#C8102E]">What Our Customers Say</h2>
 
   <div class="overflow-hidden relative">
