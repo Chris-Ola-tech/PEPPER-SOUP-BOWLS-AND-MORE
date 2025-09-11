@@ -1,21 +1,29 @@
 const menu = document.getElementById("menu");
-  const menuBar = document.getElementById("menu-bar");
+const menuBar = document.getElementById("menu-bar");
 
-  menuBar.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-    menu.classList.toggle("flex");
-  });
+// Toggle menu on click
+menuBar.addEventListener("click", (e) => {
+  e.stopPropagation(); // prevent immediate closing
+  menu.classList.toggle("hidden");
+  menu.classList.toggle("flex");
+});
 
+// Close menu if clicked outside
+document.addEventListener("click", (e) => {
+  if (!menu.contains(e.target) && !menuBar.contains(e.target)) {
+    menu.classList.add("hidden");
+    menu.classList.remove("flex");
+  }
+});
 
-
+// Header drop animation
 window.addEventListener("DOMContentLoaded", () => {
-    const header = document.getElementById("main-header");
+  const header = document.getElementById("main-header");
 
-    // trigger the drop animation
-    setTimeout(() => {
-      header.classList.add("drop");
-    }, 100);
-  });
+  setTimeout(() => {
+    header.classList.add("drop");
+  }, 100);
+});
 
 
 
@@ -103,14 +111,7 @@ function updateCart(show = false) {
   });
 }
 
-// Toggle cart when "Cart" menu is clicked
-cartMenuBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  cartDropdown.classList.toggle("hidden");
-});
 
-// Hide cart if clicked outside
-// 
 
 // Close cart when X is clicked
 closeCartBtn.addEventListener("click", () => {
@@ -162,13 +163,20 @@ showSlide(0);
 
 
 
-    // Format message for WhatsApp
-    document.getElementById("sendBtn").addEventListener("click", function () {
+  document.getElementById("sendBtn").addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent empty submission
+
     // Get input values
-    let name = document.getElementById("name").value;
-    let phone = document.getElementById("phone").value;
-    let email = document.getElementById("email").value;
-    let message = document.getElementById("message").value;
+    let name = document.getElementById("name").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    // Check if all fields are filled
+    if (!name || !phone || !email || !message) {
+      alert("Please fill out all fields before sending.");
+      return; // Stop if any field is empty
+    }
 
     // Build WhatsApp message
     let whatsappMessage = `Hello, my name is ${name}.
@@ -189,6 +197,7 @@ Message: ${message}`;
 
 
 
+
   var showText = document.querySelector('.show-text')
 var orderText = document.querySelector('.order-text')
 
@@ -203,3 +212,24 @@ showText.addEventListener('click', () => {
     showText.textContent = 'See Less'
   }
 })
+
+
+
+
+
+ document.addEventListener("DOMContentLoaded", () => {
+    const captions = document.querySelectorAll(".food-caption");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100");
+            entry.target.classList.remove("opacity-0");
+          }
+        });
+      },
+      { threshold: 0.3 } // triggers when 30% of item is visible
+    );
+
+    captions.forEach((caption) => observer.observe(caption));
+  });
